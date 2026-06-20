@@ -16,7 +16,7 @@ public class DriverFactory
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options=new ChromeOptions();
 			options.setBinary("C:\\Users\\Lenovo\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
-			return new ChromeDriver();
+			return new ChromeDriver(options);
 		}
 		
 		else if(browser.equalsIgnoreCase("firefox")) {
