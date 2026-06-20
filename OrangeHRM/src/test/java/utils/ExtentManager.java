@@ -12,7 +12,7 @@ public class ExtentManager
 	{
 		if(extent == null) 
 		{
-			ExtentSparkReporter reporter=new ExtentSparkReporter("C:/Automation/myworkspases/SeleniumWebDriver/OrangeHRM/reports/ExtentReport.html");
+			ExtentSparkReporter reporter=new ExtentSparkReporter("reports/ExtentReport.html");
 			
 			extent=new ExtentReports();
 			
