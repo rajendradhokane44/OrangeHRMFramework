@@ -19,10 +19,10 @@ public class WaitUtil
 	}
 	
 	//create method for wait
-	public void waitForElemeny(By username)
+	public void waitForElemeny(WebElement username)
 	{
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(username));
+		wait.until(ExpectedConditions.visibilityOfElementLocated( (By) username));
 	}
 
 }

@@ -51,7 +51,7 @@ public class LoginPage extends BasePage
 		
 		//driver.findElement(LoginBtn).click();*/
 		//use wait********
-		wait.waitForElemeny((By) username);
+		//wait.waitForElemeny(username);
 		username.sendKeys(user);
 		//action.type(username, user);
 		//action.type(password, pass);
