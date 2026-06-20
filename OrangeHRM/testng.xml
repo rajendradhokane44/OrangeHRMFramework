@@ -24,31 +24,6 @@
       <class name="tests.LoginTest"/>
     </classes>
     </test>
-</suite name="Suite"> <!-- Suite -->
+</suite >
 
 
-testng.xml
-      ↓
-browser=firefox
-      ↓
-@BeforeTest
-      ↓
-BaseTest
-      ↓
-BaseClass
-      ↓
-DriverFactory
-      ↓
-FirefoxDriver
--------------------------------------
-testng.xml
-      ↓
-@Parameters("browser")
-      ↓
-@BeforeTest
-      ↓
-initDriver(browser)
-      ↓
-DriverFactory.initDriver(browser)
-      ↓
-ChromeDriver / FirefoxDriver / EdgeDriver

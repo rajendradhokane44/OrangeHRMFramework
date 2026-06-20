@@ -2,13 +2,15 @@ package base;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 public class BaseTest extends BaseClass
 {
+	@Parameters("browser")
 	 @BeforeMethod
-	 @Parameters("browser")
-	    public void startBrowser(String browser) {
+	 
+	    public void startBrowser(@Optional("chrome") String browser) {
 
 	       // setup();
 		 initDriver(browser);
@@ -22,7 +24,34 @@ public class BaseTest extends BaseClass
 
         }
 }
-
+/*
+ *testng.xml
+      ↓
+browser=firefox
+      ↓
+@BeforeTest
+      ↓
+BaseTest
+      ↓
+BaseClass
+      ↓
+DriverFactory
+      ↓
+FirefoxDriver
+-------------------------------------
+testng.xml
+      ↓
+@Parameters("browser")
+      ↓
+@BeforeTest
+      ↓
+initDriver(browser)
+      ↓
+DriverFactory.initDriver(browser)
+      ↓
+ChromeDriver / FirefoxDriver / EdgeDriver
+ * */
+ 
 
 //Consider lots of Test Class
 //to hare test class me after() and before() use karna padenga
