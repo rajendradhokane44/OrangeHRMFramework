@@ -13,7 +13,7 @@ public class DriverFactory
 	{
 		if(browser.equalsIgnoreCase("chrome"))
 		{
-			WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().browserVersion("148").setup();
 			ChromeOptions options=new ChromeOptions();
 			options.setBinary("C:\\Users\\Lenovo\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe");
 			return new ChromeDriver(options);
