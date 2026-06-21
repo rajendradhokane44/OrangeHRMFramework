@@ -40,7 +40,8 @@ public class LoginTest extends BaseTest
 		
 		
 		HomePage hp=new HomePage(getDriver());
-		
+		System.out.println("url="+getDriver().getCurrentUrl());
+		System.out.println("Title="+getDriver().getTitle());
 		Assert.assertTrue(hp.isDashboardDisplayed());
 		System.out.println(Thread.currentThread().getId());
 		
