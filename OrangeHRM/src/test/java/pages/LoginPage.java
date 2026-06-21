@@ -1,10 +1,14 @@
 package pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.BasePage;
 import utils.ActionUtil;
@@ -39,7 +43,7 @@ public class LoginPage extends BasePage
 	//By password=By.name("password");
 	@FindBy(name="password") WebElement password;
 	
-	By LoginBtn=By.xpath("//button[@type='submit']");
+	//By LoginBtn=By.xpath("//button[@type='submit']");
 	@FindBy(xpath = "//button[@type='submit']") WebElement loginBtn;
 	
 	//here create one "login" method to perform action on elements
@@ -51,7 +55,8 @@ public class LoginPage extends BasePage
 		
 		//driver.findElement(LoginBtn).click();*/
 		//use wait********
-		//wait.waitForElemeny(username);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(username));
 		username.sendKeys(user);
 		//action.type(username, user);
 		//action.type(password, pass);
